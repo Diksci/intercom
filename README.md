@@ -1,4 +1,4 @@
-# Intercom (contract-test-latest)
+# Intercom
 
 This repository is a reference implementation of the **Intercom** stack on Trac Network.  
 It provides:
