@@ -1,17 +1,13 @@
-## 🚀 AI Signal Assistant Module
+## 🏆 Intercom Vibe Submission
 
-This fork adds a modular AI Signal Analyzer system located in `/ai-signal`.
-
-Features:
-- Token risk scoring
-- Liquidity analysis
-- REST API endpoint
-- Modular architecture
-
-Run:
-cd ai-signal
-npm install
-npm run dev
-
-## Trac Address
+Trac Address:
 trac1e37e9mmzz7m7857hrfskyangsv45wcavya4ayey9em7vnywwmhusdxf47k
+
+Submission Type:
+Intercom Fork + AI Signal Analyzer
+
+Proof of Functionality:
+![proof](image.png)
+
+Built as part of the Intercom Vibe Competition.
+Extends Intercom with real-time AI crypto market analysis.

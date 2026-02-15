@@ -1,30 +1,57 @@
+# AI Signal Analyzer Skill
+
+This fork extends Intercom with a real-time crypto signal engine.
+
 ---
 
-## 🚀 Custom Skill: AI Signal Analyzer Module
+## Skill Name
+ai_signal_analyzer
 
-This fork introduces a modular AI Signal Assistant located in `/ai-signal`.
+## Description
+Fetch real-time token data and generate structured trading signal.
 
-### New Capability
-Analyze token liquidity, trading volume, assign risk score, and provide trading recommendation.
+---
 
-### Endpoint
-GET /api/analyze/:token
+## Input Format (Agent Request)
 
-### Agent Instructions
+{
+  "type": "signal",
+  "token": "ETH"
+}
 
-1. Accept token symbol input.
-2. Run signal generation engine.
-3. Evaluate liquidity and volume.
-4. Assign risk level (LOW / MEDIUM / HIGH).
-5. Return trading recommendation (BUY / WAIT / AVOID).
+---
 
-### Example Usage
+## Output Format (Agent Response)
 
-Input:
-ETH
+{
+  "type": "signal_result",
+  "token": "ETH",
+  "price_usd": number,
+  "change_24h": number,
+  "risk": "LOW | MEDIUM | HIGH",
+  "recommendation": "BUY | WAIT | AVOID"
+}
 
-Output:
-- Liquidity score
-- Volume score
-- Risk level
-- Recommendation
+---
+
+## Agent Instructions
+
+1. Accept token symbol or name.
+2. Resolve CoinGecko ID via search API.
+3. Fetch price + 24h change.
+4. Calculate:
+   - Risk level (volatility based)
+   - Trading recommendation
+5. Return structured JSON.
+6. Never execute trades.
+7. Read-only analysis only.
+
+---
+
+## Execution Modes
+
+- CLI Mode (VSCode)
+- REST API Mode
+- SC-Bridge Agent Mode
+
+TTY not allowed in agent mode.
